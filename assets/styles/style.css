@@ -117,6 +117,11 @@ button {
     margin-bottom: 20px;
 }
 
+button:hover {
+    cursor: pointer;
+    background-color: #b55cf0;
+}
+
 .new-account {
     display: flex;
     justify-content: end;
