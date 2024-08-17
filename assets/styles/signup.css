@@ -1,0 +1,130 @@
+:root {
+    --gradient-top: #600999; /* 0 % */
+    --gradient-mid: #350556; /* 50% */
+    --gradient-bottom: #000000db; /* 100 */
+    --bg-color: #E4E4E4;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to bottom, var(--gradient-top) 0%, var(--gradient-mid) 50%, var(--gradient-bottom) 100%);
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    padding: 20px;
+}
+
+
+.login-container {
+    width: 50em;
+    height: 38em;
+    margin: auto;
+    display: grid;
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    overflow: hidden;
+    
+}
+
+.img-container {
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.img-container img {
+    height: 250px;
+    width: 300px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.form-container {
+    padding: 30px;
+}
+
+.form-container h2 {
+    color: #6F0AB2;
+    border-left: 4px solid #6F0AB2;
+    padding-left: 5px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.form-container h3 {
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #333333db;
+    font-weight: lighter;
+    padding-bottom: 10px;
+}
+
+.input-group input {
+    width: 100%;
+    height: 25px;
+    padding: 10px;
+    background-color: hsla(243, 100%, 69%, 0.195);
+    border: none;
+    border-radius: 5px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.actions input {
+    margin-right: 5px;
+}
+
+.actions label {
+    color: #333333b4;
+}
+
+.actions a {
+    font-size: 0.9em;
+    color: #c11616a0;
+}
+
+button {
+    background-color: #6F0AB2;
+    width: 100%;
+    border: none;
+    height: 2.5em;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #b55cf0;
+}
+
+.new-account {
+    display: flex;
+    justify-content: end;
+}
