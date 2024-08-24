@@ -11,13 +11,16 @@
        <!-- Container da imagem, à esquerda -->
         <div class="img-container">
             <img src="../assets/img/login-svg.svg" alt="ilustration">
-            <a class="have-account" href="login.html">Already have an account? <span>Sign in</span></a>
+
+            <!--******* TO REMOVE AFTER SIGNING UP ******** -->
+            <!-- <a class="have-account" href="login.html">Already have an account? <span>Sign in</span></a> -->
         </div>
       <!-- Container do formulário, à direita -->
         <div class="form-container">
             <form action="">
                 <h2>TO-DO LIST</h2>
-                <h3>Sign up</h3>
+                 <!--******* TO REMOVE AFTER SIGNING UP ******** -->
+                <!-- <h3>Sign up</h3> -->
                 <div class="editable">
 
                     <!-- <div class="input-group">
@@ -40,14 +43,18 @@
                         <label for="">Password</label>
                         <input type="password" name="password" required>
                     </div>
-                    <button type="submit">Signup</button> -->
+                    <button class="btn-signup" type="submit">Signup</button> -->
                    
                     <div id="success">
                        <div class="superior">
-                        success
+                        <img src="../assets/img/sucess.svg" alt="success-symbol">
+                        <span>SUCCESS</span>
                        </div> 
                        <div class="inferior">
-                        parabens
+                        <span>Congratulations, your account has been successfully created.</span>
+                        <a class="btn-link" href="login.html">
+                            <button class="btn-success" type="button">Continue</button>
+                        </a>
                        </div> 
                     </div>
                 </div>
