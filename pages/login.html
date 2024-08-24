@@ -14,17 +14,19 @@
         </div>
       <!-- Container do formulário, à direita -->
         <div class="form-container">
-            <form action="">
+            <form action="" autocomplete="off">
                 <h2>TO-DO LIST</h2>
-                <h3>Sign in</h3>
-                <span> <!-- Incorrect email or password --></span>
+                <div class="header-login">
+                    <h3>Sign in</h3>
+                    <span id="incorrect"> Incorrect email or password! </span>
+                </div>
                 <div class="input-group">
                     <label for="email-input">Email adress</label>
                     <input id="email-input" type="email" name="email" required >
                 </div>
                 <div class="input-group">
                     <label for="">Password</label>
-                    <input type="password" name="password" required >
+                    <input id="password-input" type="password" name="password" required >
                 </div>
                 <div class="actions">
                     <label for="remember">
@@ -37,5 +39,6 @@
             <a class="new-account" href="signup.html">Create new account</a>
         </div>
     </main>
+    <script src="../assets/scripts/script-login.js"></script>
 </body>
 </html>

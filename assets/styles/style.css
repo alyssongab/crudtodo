@@ -3,6 +3,8 @@
     --gradient-mid: #350556; /* 50% */
     --gradient-bottom: #000000db; /* 100 */
     --bg-color: #E4E4E4;
+    --danger-bg: rgb(255, 0, 4, 15%); /* 15% */
+    --danger: #A30000;
 }
 
 
@@ -51,6 +53,23 @@ body {
 
 .form-container {
     padding: 30px;
+}
+
+.header-login {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: start;
+}
+
+#incorrect {
+    text-align: center;
+    background-color: var(--danger-bg);
+    font-size: 0.9em;
+    color: var(--danger);
+    font-weight: bold;
+    padding: 5px;
+    visibility: hidden;
 }
 
 .form-container h2 {
