@@ -24,10 +24,10 @@ body {
 
 .login-container {
     width: 50em;
-    /* height: 38em; */
+    height: 38em;
 
     /******** AFTER SIGNING UP***********/
-    height: 34em;
+    /* height: 34em; */
     margin: auto;
     display: grid;
     background-color: var(--bg-color);
@@ -124,38 +124,17 @@ body {
 
 /* Div success */
 
-/* #success {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 0px;
-    padding: 0px;
-    width: 300px;
-    border: 1px solid black;
-}
-
-#success > div {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-  }
-
-.superior {
-    background-color: chartreuse;
-    height: 150px;
-} */
 
 #success {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid black; */
     width: 300px;
     height: 240px;
     border-radius: 10px;
     overflow: hidden;
-    /* MUITO SUS */
-    /* margin-top: 85px; */
+
 }
 
 #success > div {
@@ -212,6 +191,6 @@ body {
     background-color: rgb(66, 132, 66);
 }
 
-.editable {
+/* .editable {
     padding-top: 50px;
-}
+} */
