@@ -134,6 +134,7 @@ body {
     height: 240px;
     border-radius: 10px;
     overflow: hidden;
+    display: none;
 
 }
 
