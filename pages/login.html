@@ -14,19 +14,24 @@
         </div>
       <!-- Container do formulário, à direita -->
         <div class="form-container">
-            <form action="" autocomplete="off">
+            <form id="login-form" action="" autocomplete="off">
                 <h2>TO-DO LIST</h2>
+                <!-- "Cabeçalho do container de formulario" -->
                 <div class="header-login">
                     <h3>Sign in</h3>
+                    <!-- Span caso as credenciais estejam inválidas. (Fica invisível até ser acionado) -->
                     <span id="incorrect"> Incorrect email or password! </span>
                 </div>
+                <!-- Demais campos do container de formulário -->
                 <div class="input-group">
                     <label for="email-input">Email adress</label>
                     <input id="email-input" type="email" name="email" required >
+                    <span id="email-error" class="error-message"></span>
                 </div>
                 <div class="input-group">
                     <label for="">Password</label>
                     <input id="password-input" type="password" name="password" required >
+                    <span id="password-error" class="error-message"></span>
                 </div>
                 <div class="actions">
                     <label for="remember">
