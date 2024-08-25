@@ -69,7 +69,14 @@ body {
     color: var(--danger);
     font-weight: bold;
     padding: 5px;
-    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 0.3s ease-in-out;
+}
+
+#incorrect.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .form-container h2 {
