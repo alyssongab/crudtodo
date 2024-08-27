@@ -135,7 +135,19 @@ body {
     border-radius: 10px;
     overflow: hidden;
     display: none;
+    transform: translateY(-10px);
+    transition: 0.3s ease-in-out;
+}
 
+#success {
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(-20px); /* Inicialmente deslocado para cima */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transições para opacidade e transformação */
+}
+
+#success.show {
+    opacity: 1; /* Totalmente visível */
+    transform: translateY(0); /* Posição final */
 }
 
 #success > div {
