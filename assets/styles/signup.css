@@ -57,12 +57,12 @@ body {
 
 
 .img-container a {
-    text-decoration: none;
+    text-decoration: underline;
+    font-weight: 600;
 }
 
 .img-container span {
-    text-decoration: underline;
-    font-weight: 600;
+   color: var(--gradient-top);
 }
 
 /* ***** FORM CONTAINER ***** */
