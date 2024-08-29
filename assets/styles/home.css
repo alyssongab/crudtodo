@@ -8,6 +8,7 @@
     --bg-color: #2B0B41;
     --text: #6F0AB2;
     --bg-alt: #E4E4E4;
+    --bg-btn: #6C63FF;
 }
 
 body {
@@ -42,4 +43,37 @@ header {
     border: none;
     background: none;
     cursor: pointer;
+}
+
+#add-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+    padding: 20px;
+    gap: 10px;
+}
+
+#new-task {
+    width: 25%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--bg-alt);
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--text);
+}
+
+#new-task:focus {
+    
+}
+
+#add-btn {
+    width: 5%;
+    height: 40px;
+    background-color: var(--bg-btn);
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
