@@ -126,8 +126,51 @@ header {
     gap: 15px;
     width: 40%;
     height: 20vh;
-    text-align: center;
     font-size: 1.2em;
     color: rgba(0, 0, 0, 0.5);
     font-weight: bold;
+}
+
+#tasks.tasks-class {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: var(--bg-alt);
+    justify-content: start;
+    align-items: start;
+    gap: 0px;
+    flex-grow: 1;
+    max-height: 50vh;
+}
+
+.task-item {
+    display: flex;
+    padding: 5px 10px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: start;
+    background-color: var(--bg-alt);
+    color: var(--text);
+    gap: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.277);
+}
+
+.task-item label {
+    font-size: 1.2em;
+}
+
+.img-box {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-div {
+    display: flex;
+    width: 90%;
+    gap: 10px;
+    /* background-color: aquamarine; */
+}
+
+.bttn:hover {
+    cursor:pointer;
 }
