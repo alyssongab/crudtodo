@@ -13,15 +13,30 @@ function logout() {
     window.location.href = "login.html";
 }
 
-document.getElementById("new-task").addEventListener('focus', function() {
-    if(this.value === 'Create new task...') {
+// Evento 'focus' - limpa o placeholder e ajusta o font-weight
+newTask.addEventListener('focus', function() {
+    if (this.value === 'Create new task...') {
         this.value = '';
+    }
+    this.style.fontWeight = 'bold'; // Coloca o texto em negrito quando o input recebe foco
+});
+
+// Evento 'blur' - restaura o placeholder e ajusta o font-weight
+newTask.addEventListener('blur', function() {
+    if (this.value === '') {
+        this.value = 'Create new task...';
+        this.style.fontWeight = 'normal'; // Retorna ao peso normal quando o input perde foco e está vazio
+    } else if (this.value !== 'Create new task...') {
+        this.style.fontWeight = 'bold'; // Mantém o negrito se houver texto
     }
 });
 
-document.getElementById("new-task").addEventListener('blur', function() {
-    if(this.value === '') {
-        this.value = 'Create new task...';
+// Evento 'input' - ajusta o font-weight conforme o texto é digitado
+newTask.addEventListener('input', function() {
+    if (this.value !== '' && this.value !== 'Create new task...') {
+        this.style.fontWeight = 'bold'; // Coloca o texto em negrito quando o usuário digita
+    } else {
+        this.style.fontWeight = 'normal'; // Retorna ao peso normal se o input ficar vazio ou igual ao placeholder
     }
 });
 
@@ -38,7 +53,7 @@ function addTask() {
         // 2 sub-divs: uma para checkbox e label e outra para as imagens;
         const checkboxDiv = document.createElement('div');
         newTaskDiv.appendChild(checkboxDiv);
-        checkboxDiv.className = 'checkbox-div'
+        checkboxDiv.className = 'checkbox-div';
 
         const imgDiv = document.createElement('div');
         imgDiv.className = 'img-box';
@@ -71,6 +86,7 @@ function addTask() {
 
         // Limpando o campo de input
         newTask.value = 'Create new task...';
+        newTask.style.fontWeight = 'normal';
 
         // Chama a função para limpar a div 'no-task'
         styleNewTask();
@@ -101,7 +117,7 @@ function styleNewTask() {
     warning.style.visibility = 'hidden';
     spanNoTask.remove();
     img.remove();
-    document.getElementById('tasks').classList.add('tasks-class');
+    document.getElementById('tasks').classList.add('has-task');
         
 }
 

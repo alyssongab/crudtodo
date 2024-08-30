@@ -118,29 +118,33 @@ header {
     transform: scale(1.1); /* Aumenta o tamanho do botão em 10% */
 }
 
+
+
 #tasks {
     display: flex;
-    background-color: var(--bg-alt);
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    background-color: var(--bg-alt);
     width: 40%;
-    height: 20vh;
+    min-height: 100px; /* Altura inicial mínima */
     font-size: 1.2em;
     color: rgba(0, 0, 0, 0.5);
     font-weight: bold;
+    padding: 10px;
+    gap: 10px;
 }
 
-#tasks.tasks-class {
-    display: flex;
-    flex-flow: column wrap;
-    background-color: var(--bg-alt);
+#tasks.has-task {
+    flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap: 0px;
-    flex-grow: 1;
-    max-height: 50vh;
+    max-height: 40vh; /* Altura máxima antes de ativar o overflow */
+    overflow-y: auto;
+    overflow-x: hidden;
+    gap: 0;
 }
+
 
 .task-item {
     display: flex;
