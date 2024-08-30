@@ -30,7 +30,7 @@ body {
 
 header {
     display: flex;
-    padding: 40px;
+    padding: 30px;
     justify-content: center;
     align-items: center;
 }
@@ -67,8 +67,9 @@ header {
 }
 
 .warning {
-    visibility: hidden;
+    display: none;
     background-color: white;
+    padding: 5px;
 }
 
 #add-box {

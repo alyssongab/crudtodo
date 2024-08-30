@@ -44,11 +44,11 @@ function addTask() {
     const taskValue = newTask.value.trim();
 
     if (!taskValue || taskValue === 'Create new task...') {
-        warning.style.visibility = 'visible';
+        warning.style.display = 'block';
         return;
     } 
 
-    warning.style.visibility = 'hidden';
+    warning.style.display = 'none';
 
     // incrementa o contador de tarefas (para a geração do id)
     taskIdCounter++;
@@ -68,31 +68,6 @@ function addTask() {
 
     // log para o backend
     console.log('Tarefa criada. ID: ', newTaskDiv.id);
-
-    // *********************************************************************************************************
-
-    // anexa a div ao container tasks
-    document.getElementById('tasks').appendChild(newTaskDiv);
-
-    // Chama a função para limpar a div 'no-task'
-    styleNewTask();
-
-    // Imagens que serão um botão, para editar e remover tarefas
-    const imgEdit = document.createElement('img');
-    imgEdit.setAttribute('src', '../assets/img/edit-svg.svg');
-    imgEdit.setAttribute('alt', 'edit');
-    imgEdit.setAttribute('width', '40px');
-    imgEdit.setAttribute('height', '35px');
-    imgDiv.appendChild(imgEdit);
-
-    const imgRemove = document.createElement('img');
-    imgRemove.setAttribute('src', '../assets/img/remove-svg.svg');
-    imgRemove.setAttribute('alt', 'remove');
-    imgRemove.setAttribute('width', '40px');
-    imgRemove.setAttribute('height', '30px');
-    imgDiv.appendChild(imgRemove);
-
-    // *********************************************************************************************************
    
 }
 
@@ -118,7 +93,7 @@ function createTaskElement(taskValue, taskId) {
 // Função para criar a div do checkbox e o nome da tarefa
 
 function createCheckbox(taskValue, taskId) {
-    const checkboxDiv = document.createElemenet('div');
+    const checkboxDiv = document.createElement('div');
     checkboxDiv.className = 'checkbox-div';
 
     const newInput = document.createElement('input');
@@ -140,4 +115,27 @@ function createCheckbox(taskValue, taskId) {
 
 function createImgButtons() {
 
+    const imgDiv = document.createElement('div');
+    imgDiv.className = 'img-box';
+
+    const imgEdit = createImgButton('../assets/img/edit-svg.svg', 'edit', 40, 35);
+    const imgRemove = createImgButton('../assets/img/remove-svg.svg', 'remove', 40, 30);
+
+    imgDiv.appendChild(imgEdit);
+    imgDiv.appendChild(imgRemove);
+
+    return imgDiv;
+}
+
+// Função para criar as imagens individualmente, utilizando os parâmetros
+
+function createImgButton(src, alt, width, height) {
+    const img = document.createElement('img');
+
+    img.src = src;
+    img.alt = alt;
+    img.width = width;
+    img.height = height;
+
+    return img;
 }
