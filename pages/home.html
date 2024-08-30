@@ -16,9 +16,10 @@
         </div>
     </header>
     <main class="content">
+        <span class="warning">You need to add a task!</span>
         <div id="add-box">
             <input type="text" name="new-task" id="new-task" value="Create new task...">
-            <button id="add-btn">Add</button>
+            <button id="add-btn" onclick="addTask()">Add</button>
         </div>
         <div id="tasks">
             <span class="no-task">You haven't created any task yet.</span>
