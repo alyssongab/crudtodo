@@ -66,6 +66,11 @@ header {
     gap: 10px;
 }
 
+.warning {
+    visibility: hidden;
+    background-color: white;
+}
+
 #add-box {
     display: flex;
     justify-content: center;

@@ -1,4 +1,5 @@
-// const newTask = document.getElementById("new-task");
+const newTask = document.getElementById("new-task");
+const warning = document.querySelector('.warning');
 
 function logout() {
     window.alert("You have been logged out");
@@ -16,3 +17,11 @@ document.getElementById("new-task").addEventListener('blur', function() {
         this.value = 'Create new task...';
     }
 });
+
+function addTask() {
+    if(newTask.value === '' || newTask.value === 'Create new task...') {
+        warning.style.visibility = 'visible';
+    } else {
+        // logica do botao (criacao da div, gerar novo id, e anexar a div pai)
+    }
+}
