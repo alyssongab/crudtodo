@@ -54,9 +54,13 @@ header {
 .header-box button {
     border: none;
     background: none;
-    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
+.header-box button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
 .content {
     display: flex;
     flex-flow: column wrap;
@@ -183,7 +187,7 @@ header {
 .img-btn {
     background: none;
     border:none;
-    transition: transform 0.2s ease
+    transition: transform 0.2s ease;
 }
 
 .img-btn:hover {
