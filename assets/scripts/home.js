@@ -80,7 +80,7 @@ function createTaskElement(taskValue, taskId) {
     newTaskDiv.classList.add('task-item');
 
     const newCheckbox = createCheckbox(taskValue, taskId);
-    const newImgDiv = createImgButtons();
+    const newImgDiv = createImgButtons(taskId);
 
     newTaskDiv.appendChild(newCheckbox);
     newTaskDiv.appendChild(newImgDiv);
@@ -113,23 +113,28 @@ function createCheckbox(taskValue, taskId) {
 
 // Função para criar a div dos botões edit e remove
 
-function createImgButtons() {
+function createImgButtons(taskId) {
 
     const imgDiv = document.createElement('div');
     imgDiv.className = 'img-box';
 
-    const imgEdit = createImgButton('../assets/img/edit-svg.svg', 'edit', 40, 35);
-    const imgRemove = createImgButton('../assets/img/remove-svg.svg', 'remove', 40, 30);
+    const btnEdit = createImgButton('../assets/img/edit-svg.svg', 'edit', 40, 35, `edit-btn-${taskId}`);
+    const btnRemove = createImgButton('../assets/img/remove-svg.svg', 'remove', 40, 30, `remove-btn-${taskId}`);
 
-    imgDiv.appendChild(imgEdit);
-    imgDiv.appendChild(imgRemove);
+    imgDiv.appendChild(btnEdit);
+    imgDiv.appendChild(btnRemove);
 
     return imgDiv;
 }
 
 // Função para criar as imagens individualmente, utilizando os parâmetros
 
-function createImgButton(src, alt, width, height) {
+function createImgButton(src, alt, width, height, id) {
+
+    const button = document.createElement('button');
+    button.id = id;
+    button.className = 'img-btn';
+
     const img = document.createElement('img');
 
     img.src = src;
@@ -137,5 +142,7 @@ function createImgButton(src, alt, width, height) {
     img.width = width;
     img.height = height;
 
-    return img;
+    button.appendChild(img);
+
+    return button;
 }

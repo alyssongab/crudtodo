@@ -179,3 +179,14 @@ header {
 .bttn:hover {
     cursor:pointer;
 }
+
+.img-btn {
+    background: none;
+    border:none;
+    transition: transform 0.2s ease
+}
+
+.img-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
