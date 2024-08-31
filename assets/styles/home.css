@@ -43,7 +43,12 @@ header {
     background-color: var(--bg-alt);
     width: 30%;
     padding: 5px 15px;
-    color: var(--text); 
+    color: var(--text);
+}
+
+.header-box a {
+    color: var(--text);
+    text-decoration: none;
 }
 
 .header-box h3 {
