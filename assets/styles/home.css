@@ -206,3 +206,15 @@ input[type="checkbox"]{
     cursor: pointer;
 
   }
+
+.edit-input {
+    background-color: var(--bg-alt);
+    height: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--text);
+    outline: none;
+    border: none;
+    padding: 5px;
+    box-shadow: 0 0 8px rgba(136, 130, 248, 0.6);
+}
