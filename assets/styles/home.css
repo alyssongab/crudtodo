@@ -199,3 +199,10 @@ header {
     cursor: pointer;
     transform: scale(1.1);
 }
+
+input[type="checkbox"]{
+    width: 18px; /*Desired width*/
+    height: 18px; /*Desired height*/
+    cursor: pointer;
+
+  }

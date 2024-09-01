@@ -161,3 +161,4 @@ function createImgButton(src, alt, width, height, id) {
 
     return button;
 }
+
