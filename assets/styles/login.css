@@ -149,7 +149,8 @@ button:hover {
 }
 
 .new-account, .new-account:visited{
-    display: flex;
-    justify-content: end;
+    display: block;
     color: var(--gradient-top);
+    width: 45%;
+    float: right;
 }
