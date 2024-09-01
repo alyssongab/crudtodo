@@ -34,6 +34,14 @@ newTask.addEventListener('input', function() {
     }
 });
 
+// Agora tanto a tecla enter quanto o botão de adicionar tarefas, chamam a função 'addTask'
+newTask.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        addTask();
+        this.blur(); 
+    }
+});
+
 let taskIdCounter = 0;
 const warning = document.querySelector('.warning');
 const spanNoTask = document.querySelector('.no-task');
