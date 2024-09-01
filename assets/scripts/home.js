@@ -1,11 +1,19 @@
+document.addEventListener('DOMContentLoaded', function() {
+
 // ************************************************** //
 
-const newTask = document.getElementById("new-task");
+const logoutButton = document.getElementById('logout-button');
+logoutButton.addEventListener('click', function() {
+    logout();
+});
 
 function logout() {
     window.alert("You have been logged out");
     window.location.href = "login.html";
 }
+
+
+const newTask = document.getElementById("new-task");
 
 // Evento 'focus' - limpa o placeholder e ajusta o font-weight
 newTask.addEventListener('focus', function() {
@@ -42,10 +50,16 @@ newTask.addEventListener('keypress', function(e) {
     }
 });
 
+// Função para adicionar uma tarefa (agora implementada diretamente no javascript).
 let taskIdCounter = 0;
 const warning = document.querySelector('.warning');
 const spanNoTask = document.querySelector('.no-task');
-const img = document.querySelector('.img-task');
+const img = document.querySelector('.img-task')
+
+const addButton = document.getElementById('add-btn');
+addButton.addEventListener('click', function() {
+    addTask();
+});
 
 function addTask() {
 
@@ -120,7 +134,7 @@ function createCheckbox(taskValue, taskId) {
         if (newInput.checked) {
             newLabel.style.textDecoration = 'line-through'; // Risca o texto
             selected++;
-            tasks.push(taskValue);
+            tasks.push(taskValue); // adiciona a(s) tarefa(s) marcada(s) para o array 'tasks'.
             console.log(selected);
             console.log(tasks);
         } else {
@@ -169,4 +183,7 @@ function createImgButton(src, alt, width, height, id) {
 
     return button;
 }
+
+// ******** DOM CONTENT LOADED *********
+});
 
