@@ -199,6 +199,9 @@ function removeTask(id) {
     const removedTask = document.getElementById(`task-${id}`);
     if(removedTask) {
         removedTask.remove();
+
+        // Após remover, verifica se o bloco de tasks está vazio
+        checkIfTasksAreEmpty();
     }
 }
 
@@ -236,13 +239,29 @@ function editTask(id) {
         });
 
         // Salva ao tirar o foco do input
-        input.addEventListener('blur', function() {
-            saveEdit();
-        });
+        input.addEventListener('blur', saveEdit);
+    }
+}
+
+// Função para verificar se o bloco de tasks está vazio
+function checkIfTasksAreEmpty() {
+    const taskBox = document.getElementById('tasks');
+
+    // Verifica se o container está vazio para chamar a função que restaura a div.
+    if(taskBox.children.length === 0) {
+        restoreEmptyBlock();
     }
 }
 
 // Função para voltar o span e a imagem, caso não haja tasks
+function restoreEmptyBlock() {
+    const taskBox = document.getElementById('tasks');
+    taskBox.appendChild(spanNoTask);
+    taskBox.appendChild(img);
+
+    taskBox.classList.remove('has-task');
+
+}
 
 
 // ******** DOM CONTENT LOADED *********
