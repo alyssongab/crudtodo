@@ -259,6 +259,7 @@ function restoreEmptyBlock() {
     taskBox.appendChild(spanNoTask);
     taskBox.appendChild(img);
 
+    // Remove a classe has-task para que as configurações css voltem ao padrão
     taskBox.classList.remove('has-task');
 
 }
