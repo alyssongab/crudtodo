@@ -89,6 +89,8 @@ function createTaskElement(taskValue, taskId) {
 
 }
 
+let selected = 0;
+const tasks = [];
 
 // Função para criar a div do checkbox e o nome da tarefa
 
@@ -104,6 +106,19 @@ function createCheckbox(taskValue, taskId) {
     newLabel.htmlFor = `task-${taskId}`;
     newLabel.className = 'checkbox-label';
     newLabel.textContent = taskValue;
+
+    // Adiciona o ouvinte de eventos para riscar o texto ao marcar o checkbox
+    newInput.addEventListener('change', function() {
+        if (newInput.checked) {
+            newLabel.style.textDecoration = 'line-through'; // Risca o texto
+            selected++;
+            tasks.push(taskValue);
+            console.log(selected);
+            console.log(tasks);
+        } else {
+            newLabel.style.textDecoration = 'none'; // Remove o riscado se desmarcado
+        }
+    });
 
     checkboxDiv.appendChild(newInput);
     checkboxDiv.appendChild(newLabel);
