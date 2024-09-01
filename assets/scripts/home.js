@@ -50,7 +50,8 @@ newTask.addEventListener('keypress', function(e) {
     }
 });
 
-// Função para adicionar uma tarefa (agora implementada diretamente no javascript).
+// auxiliares para a função de adicionar tarefa.
+
 let taskIdCounter = 0;
 const warning = document.querySelector('.warning');
 const spanNoTask = document.querySelector('.no-task');
@@ -61,6 +62,7 @@ addButton.addEventListener('click', function() {
     addTask();
 });
 
+// Função para adicionar uma tarefa (agora implementada diretamente no javascript).
 function addTask() {
 
     const taskValue = newTask.value.trim();
@@ -79,7 +81,7 @@ function addTask() {
     const newTaskDiv = createTaskElement(taskValue, taskIdCounter);
     document.getElementById('tasks').appendChild(newTaskDiv);
 
-    // Remove o span, a imagem e adiciona a classe 'has-task' ao bloco de tasks, que é tratado no css
+    // Remove o span e a imagem; adiciona a classe 'has-task' ao bloco de tasks, que é tratada no css
     if(spanNoTask) spanNoTask.remove();
     if(img) img.remove();
     document.getElementById('tasks').classList.add('has-task');
@@ -148,7 +150,7 @@ function createCheckbox(taskValue, taskId) {
     return checkboxDiv;
 }
 
-// Função para criar a div dos botões edit e remove
+// Função para criar a div dos ícones e os botões edit e remove
 
 function createImgButtons(taskId) {
 
@@ -158,13 +160,21 @@ function createImgButtons(taskId) {
     const btnEdit = createImgButton('../assets/img/edit-svg.svg', 'edit', 40, 35, `edit-btn-${taskId}`);
     const btnRemove = createImgButton('../assets/img/remove-svg.svg', 'remove', 40, 30, `remove-btn-${taskId}`);
 
+    btnEdit.addEventListener('click', function(){
+        editTask(taskId);
+    });
+
+    btnRemove.addEventListener('click', function(){
+        removeTask(taskId);
+    });
+
     imgDiv.appendChild(btnEdit);
     imgDiv.appendChild(btnRemove);
 
     return imgDiv;
 }
 
-// Função para criar as imagens individualmente, utilizando os parâmetros
+// Função para criar as imagens(botões) individualmente, utilizando os parâmetros
 
 function createImgButton(src, alt, width, height, id) {
 
@@ -183,6 +193,57 @@ function createImgButton(src, alt, width, height, id) {
 
     return button;
 }
+
+// Função para remover uma tarefa pelo seu ID.
+function removeTask(id) {
+    const removedTask = document.getElementById(`task-${id}`);
+    if(removedTask) {
+        removedTask.remove();
+    }
+}
+
+// Função para editar uma tarefa pelo seu ID.
+function editTask(id) {
+    const editedTask = document.getElementById(`task-${id}`);
+
+    if(editedTask) {
+        const label = document.querySelector('.checkbox-label');
+
+        // Novo input para editar a tarefa
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.value = label.textContent;
+        input.className = 'edit-input';
+
+        // Substitui a label pelo input
+        label.parentNode.replaceChild(input, label);
+        input.focus();
+
+        // Função para salvar o texto da nova tarefa
+        function saveEdit() {
+            const newText = input.value.trim();
+            if(newText != '') {
+                label.textContent = newText;
+            }
+            input.parentNode.replaceChild(label, input);
+        }
+
+        // Salva ao apertar enter
+        input.addEventListener('keypress', function(e) {
+            if(e.key === 'Enter'){
+                saveEdit();
+            }
+        });
+
+        // Salva ao tirar o foco do input
+        input.addEventListener('blur', function() {
+            saveEdit();
+        });
+    }
+}
+
+// Função para voltar o span e a imagem, caso não haja tasks
+
 
 // ******** DOM CONTENT LOADED *********
 });
